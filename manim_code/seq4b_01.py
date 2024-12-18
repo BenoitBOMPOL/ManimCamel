@@ -2,7 +2,7 @@ from manim import *
 
 class seq4b_01(Scene):
     def construct(self):
-        background_image = ImageMobject('/home/benoit/Desktop/VoyageurDesert/manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
+        background_image = ImageMobject('manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
         self.add(background_image)
         context_txt = Tex('Position finale du chameau :').scale(0.6).to_corner(UL)
         self.play(Write(context_txt))

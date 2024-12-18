@@ -4,7 +4,7 @@ BRAT_GREEN = ManimColor("#8ACE00")
 
 class seq6c_05(Scene):
     def construct(self):
-        background_image = ImageMobject('/home/benoit/Desktop/VoyageurDesert/manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
+        background_image = ImageMobject('manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
         self.add(background_image)
         reseq_1 = Tex('$\\boxed{\\frac{1}{2n} + \\ln(2n) \\leq H_{2n} \\leq 1 + \\ln(2n)}$').scale(0.6).to_corner(UL)
         reseq_2 = Tex('$\\boxed{\\ln(2) - \\frac{1}{2n} \\leq H_{2n} - H_{n} \\leq \\ln(2)}$').scale(0.6).to_corner(UR)

@@ -4,7 +4,7 @@ BRAT_GREEN = ManimColor("#8ACE00")
 
 class seq6b_02(Scene):
     def construct(self):
-        background_image = ImageMobject('/home/benoit/Desktop/VoyageurDesert/manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
+        background_image = ImageMobject('manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
         self.add(background_image)
         hist_left_line = Line(2.5 * UP, 2.5 * DOWN).to_edge(LEFT)
         dn_final_eq = Tex('$\\boxed{d_{n} = H_{2n} - \\frac{1}{2}H_{n}}$').set_color(BRAT_GREEN).to_edge(UP)

@@ -2,7 +2,7 @@ from manim import *
 
 class seq5c_02(Scene):
     def construct(self):
-        background_image = ImageMobject('/home/benoit/Desktop/VoyageurDesert/manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
+        background_image = ImageMobject('manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
         self.add(background_image)
         hist_left_line = Line(3 * UP, 3 * DOWN).to_edge(LEFT)
         self.add(hist_left_line)

@@ -1,7 +1,7 @@
 from manim import *
 class seq5b_01(Scene):
     def construct(self):
-        background_image = ImageMobject('/home/benoit/Desktop/VoyageurDesert/manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
+        background_image = ImageMobject('manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
         saloon = Dot(color = LIGHT_BROWN).scale(0.6).move_to(4 * LEFT)
         x_point = Dot(color = TEAL).scale(0.6).move_to(4 * RIGHT)
         s_txt = Tex('$S$').set_color(LIGHT_BROWN).scale(0.65).move_to(saloon.get_center() + 0.25 * LEFT)

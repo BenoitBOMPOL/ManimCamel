@@ -4,7 +4,7 @@ BRAT_GREEN = ManimColor("#8ACE00")
 
 class seq6c_02(Scene):
     def construct(self):
-        background_image = ImageMobject('/home/benoit/Desktop/VoyageurDesert/manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
+        background_image = ImageMobject('manim_code/blackboard.jpg').scale(2.0).set_opacity(0.6)
         self.add(background_image)
 
         axes = Axes(x_range = (0, 8, 1), y_range = (0.00, 1.25, 0.25), tips = False)
