@@ -33,6 +33,9 @@ class seq6c_05(Scene):
             Write(lhs_2)
         )
 
+        self.remove(reseq_3)
+        self.add(Tex('$\\boxed{d_{n} = \\frac{1}{2}H_{2n} + \\frac{1}{2}\\left(H_{2n} - H_{n}\\right)}$').scale(0.6).to_edge(UP))
+
         final_res_eq = Tex('$\\boxed{\\frac{1}{4n} + \\frac{1}{2}\\ln(2n) + \\frac{1}{2} \\ln(2) - \\frac{1}{4n} \\leq d_{n} \\leq \\frac{1}{2} + \\frac{1}{2}\\ln(2n) + \\frac{1}{2}\\ln(2)}$')
         self.play(
             Write(final_res_eq)
@@ -47,6 +50,25 @@ class seq6c_05(Scene):
             Transform(
                 final_res_eq,
                 Tex('$\\boxed{\\frac{1}{2}\\ln(4n) \\leq d_{n} \\leq \\frac{1}{2} + \\frac{1}{2}\\ln(4n)}$').set_color(BRAT_GREEN)
+            )
+        )
+
+        axes = Axes(x_range = (0, 20, 1), y_range = (0, 4, 1), x_length=10, y_length=2, tips = False).to_edge(DOWN)
+        axes.add_coordinates()
+        self.play(Write(axes))
+
+        lb_func = axes.plot(lambda n_ : 0.5 * np.log(4 * n_), x_range = (1, 20, 1)).set_stroke(width = DEFAULT_STROKE_WIDTH * 0.75)
+        self.add(lb_func)
+
+        ub_func = axes.plot(lambda n_ : 0.5 + 0.5 * np.log(4 * n_), x_range = (1, 20, 1)).set_stroke(width = DEFAULT_STROKE_WIDTH * 0.75)
+        self.add(ub_func)
+
+        self.wait()
+        dn_func = [Dot(color = BRAT_GREEN).scale(0.5).move_to(axes.c2p(n_, sum([1/(2*k_ - 1) for k_ in range(1, n_ + 1)]))) for n_ in range(1, 21)]
+        self.play(
+            AnimationGroup(
+                *[Create(dot) for dot in dn_func],
+                lag_ratio=0.1
             )
         )
         self.wait()
