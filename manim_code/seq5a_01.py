@@ -15,7 +15,6 @@ class seq5a_01(Scene):
         self.add(axes, x_lab, y_lab)
 
         dots = {0 : Dot().move_to(axes.c2p(0, 0)).set_color(BRAT_GREEN)}
-        lines = []
         self.play(Create(dots[0]))
         yi_ = 0
         for i_ in range(1, 11):
@@ -24,9 +23,6 @@ class seq5a_01(Scene):
             dots[i_] = Dot().move_to(axes.c2p(xi_, yi_))
             if i_ < 2:
                 dots[i_].set_color(BRAT_GREEN)
-            lines.append(
-                Line(dots[i_ - 1].get_center(), dots[i_].get_center()).set_stroke(WHITE, DEFAULT_STROKE_WIDTH * 0.2)
-            )
-            self.add(lines[-1], (dots[i_]))
+            self.add(dots[i_])
             self.wait(DEFAULT_WAIT_TIME / 5)
         self.wait()

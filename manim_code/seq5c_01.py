@@ -24,7 +24,7 @@ class seq5c_01(Scene):
         saloon_amt_idx = ValueTracker(0)
         saloon_amt_txt = Tex(f'${saloon_amounts[0]}$').set_color(YELLOW_C).scale(0.4).move_to(saloon.get_center() + 0.25 * UP)
 
-        depot_amounts = ['1000', '1000-2x_{n}', '2\\times(1000-2x_{n})', '\\dots\\times(1000-2x_{n})', '(n-1)\\times(1000-2x_{n})', '(n-1)\\times(1000-2x_{n}) + (1000-x_{n})']
+        depot_amounts = ['0', '1000-2x_{n}', '2\\times(1000-2x_{n})', '\\dots\\times(1000-2x_{n})', '(n-1)\\times(1000-2x_{n})', '(n-1)\\times(1000-2x_{n}) + (1000-x_{n})']
         depot_amt_idx = ValueTracker(0)
         depot_amt_txt = Tex(f'${depot_amounts[0]}$').set_color(YELLOW_C).scale(0.4).move_to(saloon.get_center() + 8 * RIGHT + 0.25 * UP)
 
