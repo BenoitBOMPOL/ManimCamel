@@ -50,7 +50,7 @@ class seq3c_02(Scene):
         history_moves = []
         self.add(hist_left_line, hist_cen_line, hist_upp_txt)
 
-        step01_txt = Tex("\\textbf{Chargement} de 1000 bananes de (D1) vers le Chameau").scale(0.4).next_to(hist_upp_txt, DOWN, aligned_edge=LEFT, buff = MED_SMALL_BUFF)
+        step01_txt = Tex("\\textbf{Chargement} de 1000 bananes du Saloon vers le Chameau").scale(0.4).next_to(hist_upp_txt, DOWN, aligned_edge=LEFT, buff = MED_SMALL_BUFF)
         self.add(step01_txt)
         history_moves.append(step01_txt)
         self.play(
@@ -150,6 +150,7 @@ class seq3c_02(Scene):
             cargo_value.animate.set_value(0),
             depots[1].animate.set_value(depots[1].get_value() + 700),
         )
+        self.wait()
         
         dummy12txt = Text('Actions :').scale(0.4).next_to(hist_cen_line.get_start(), RIGHT, aligned_edge=UP)
         step12_txt = Tex("\\textbf{Chargement} de 1000 bananes de (D1) vers le Chameau").scale(0.4).next_to(dummy12txt, DOWN, aligned_edge=LEFT, buff = MED_SMALL_BUFF)

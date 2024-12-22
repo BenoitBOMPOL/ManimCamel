@@ -51,7 +51,7 @@ class seq4e_01(Scene):
                                                     .scale(0.4)
                                                     .move_to(saloon.get_center() + stretch_factor * depots_pos[0] * RIGHT + 0.35 * UP)
                                        )}
-        self.add(cargo_txt, depots_txt[0])
+        self.play(Write(cargo_txt), Write(depots_txt[0]))
         self.wait()
 
         step01_txt = Tex('\\textbf{Chargement} de 1000 bananes du Saloon vers le Chameau').scale(0.4).next_to(hist_upp_txt, DOWN, aligned_edge=LEFT, buff = MED_SMALL_BUFF)
@@ -76,7 +76,7 @@ class seq4e_01(Scene):
             camel_position.animate.set_value(depots_pos[1]),
             cargo_value.animate.set_value(800)
         )
-        self.add(depots_txt[1])
+        self.play(Write(depots_txt[1]))
 
         step03_txt = Tex("\\textbf{Transfert} de 600 bananes du Chameau vers $(D1)$").scale(0.4).next_to(step02_txt, DOWN, aligned_edge=LEFT, buff = MED_SMALL_BUFF)
         self.add(step03_txt)

@@ -11,7 +11,7 @@ class seq6c_04(Scene):
         hist_left_line = Line(1.5 * UP, 1.5 * DOWN).to_edge(LEFT)
         
         eq_kn = Tex('$\\frac{1}{\\mathbf{n} + 1} \\leq \\ln(\\mathbf{n} + 1) - \\ln(\\mathbf{n}) \\leq \\frac{1}{\\mathbf{n}}$').scale(0.6).next_to(hist_left_line.get_start(), direction = DR, buff = SMALL_BUFF)
-        eq_knpp = Tex('$\\frac{1}{\\mathbf{n + 1} + 1} \\leq \\ln(\\mathbf{n + 1} + 1) - \\ln(\\mathbf{n + 1}) \\leq \\frac{1}{\\mathbf{n + 1}}$').scale(0.6).next_to(eq_kn, direction = DOWN, buff = SMALL_BUFF)
+        eq_knpp = Tex('$\\frac{1}{\\mathbf{n + 1} + 1} \\leq \\ln(\\mathbf{n + 1} + 1) - \\ln(\\mathbf{n + 1}) \\leq \\frac{1}{\\mathbf{n + 1}}$').scale(0.6).next_to(eq_kn, direction = DOWN, aligned_edge = LEFT, buff = SMALL_BUFF)
         self.add(hist_left_line)
         self.play(Write(eq_kn))
         self.play(
@@ -44,14 +44,14 @@ class seq6c_04(Scene):
         self.play(
             Write(sum_eq)
         )
-        res_eq = Tex('$H_{2n} - H_{n} \\leq \\ln(2n) - \\ln(n) \\leq H_{2n} - H_{n} + \\frac{1}{n} - \\frac{1}{2n}$').scale(0.6).next_to(eq_k2nm, direction = DOWN, aligned_edge = LEFT, buff = SMALL_BUFF)
+        res_eq = Tex('$H_{2n} - H_{n} \\leq \\ln(2n) - \\ln(n) \\leq H_{2n} - H_{n} + \\frac{1}{n} - \\frac{1}{2n}$').scale(0.6).next_to(sum_eq, direction = DOWN, aligned_edge = LEFT, buff = SMALL_BUFF)
         self.play(
             Write(res_eq)
         )
         self.play(
             Transform(
                 res_eq,
-                Tex('$H_{2n} - H_{n} \\leq \\mathbf{\\ln(2)} \\leq H_{2n} - H_{n} + \\frac{1}{2n}$').scale(0.6).next_to(eq_k2nm, direction = DOWN, aligned_edge = LEFT, buff = SMALL_BUFF)
+                Tex('$H_{2n} - H_{n} \\leq \\mathbf{\\ln(2)} \\leq H_{2n} - H_{n} + \\frac{1}{2n}$').scale(0.6).next_to(sum_eq, direction = DOWN, aligned_edge = LEFT, buff = SMALL_BUFF)
             )
         )
         
