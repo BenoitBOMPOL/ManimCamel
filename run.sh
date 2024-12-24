@@ -5,7 +5,7 @@ rm outputs/*.mp4
 for animpy in manim_code/*.py
 do
     baseanim=$(basename "$animpy" .py)
-    manim -qh --output_file "$PWD"/outputs/"$baseanim".mp4 --frame_rate 60 "$animpy" "$baseanim"
+    manim -qh --progress_bar none --output_file "$PWD"/outputs/"$baseanim".mp4 --frame_rate 60 "$animpy" "$baseanim"
 done
 clear
 
